@@ -17,7 +17,7 @@ export async function handler(event, context) {
     },
     body: JSON.stringify({
       ok: true,
-      mode: 'netlify-compatible',
+      mode: 'event-context',
       method: event.httpMethod,
       path: event.path,
       rawQuery: event.rawQuery,

@@ -40,7 +40,7 @@ const liveChecks = [
 ]
 
 const deploySteps = [
-  'Connect a public GitHub repository',
+  'Connect a GitHub repository',
   'Detect Vite and the functions directory',
   'Build the static app and function runtime',
   'Publish the app and route /api/* to functions',
@@ -111,7 +111,7 @@ function App() {
   )
 
   const headline = readyCount === liveChecks.length
-    ? 'Public Vite deploy with live server-side functions'
+    ? 'Vite deploy with live server-side functions'
     : 'Vite app deployed from GitHub to Nerdo.host'
 
   async function refreshChecks() {
@@ -149,13 +149,13 @@ function App() {
           <p className="eyebrow">Nerdo.host developer demo</p>
           <h1>{headline}</h1>
           <p className="lede">
-            This app is a public Vite repository. The frontend is static and
+            This app is a Vite repository. The frontend is static and
             secret-free, while `/api/*` is served by a separate function runtime
             with managed PostgreSQL and Blob storage attached.
           </p>
           <div className="actions">
             <a href={repoUrl} className="primary-link" target="_blank" rel="noreferrer">
-              View public repo
+              View repository
             </a>
             <button type="button" onClick={refreshChecks} disabled={isRefreshing}>
               {isRefreshing ? 'Running checks...' : 'Run live checks'}
@@ -165,7 +165,7 @@ function App() {
 
         <aside className="deploy-card" aria-label="Deployment source">
           <span className="status-dot">Live</span>
-          <h2>GitHub to OKD</h2>
+          <h2>Built and deployed by NerdoHost</h2>
           <p>{repoUrl}</p>
           <dl>
             <div>
